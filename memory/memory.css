@@ -1,0 +1,40 @@
+/* Positionnemeent des cartes */
+.cards-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+/* Donner une taille aux images pour l'instant cachées  */
+img {
+  width: 20vw;
+  height: 40vh;
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+/* Donner une taille aux versos des cartes */
+figure {
+  margin: 12px;
+  width: 200px;
+  height: 200px;
+  background: tomato;
+}
+
+/*  Afficher les images quand elles sont cliqués*/
+.show img {
+  display: block;
+}
+
+/* Classe que l'on utilise pour cacher les cartes */
+.invisible {
+  visibility: hidden;
+}
+
+/* Apparence affichage du score  */
+.score{
+text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 250%;
+  color: darkorange;
+}

@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    text-align:center;
+  
+  }
+  td.bord{
+    border-top:2px solid black; border-bottom:2px solid black;
+  }
+  td.bord2{
+    border-right:2px solid black; border-left:2px solid black;
+  }
+  td.bord3{
+    border-right:2px solid black;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+  }
+  table{
+  margin-left:15%;
+  border: 0;
+  }
+  img{
+    max-width: 200px;
+    height: auto;
+  }
+  
