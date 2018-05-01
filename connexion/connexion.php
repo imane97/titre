@@ -1,4 +1,6 @@
 <?php 
+	 
+	mysql_close($connecDB);
 session_start();
 $titre="Connexion";
 include("includes/identifiants.php");
@@ -23,11 +25,11 @@ if (!isset($_POST['idUser']))
 	<legend>Connexion</legend>
 	<p>
 	<label for="idUser">Pseudo :</label><input name="idUser" type="text" id="idUser" /><br />
-	<label for="mdp">Mot de Passe :</label><input type="mdp" name="mdp" id="mdp" />
+	<label for="mdp">Mot de Passe :</label><input type="password" name="mdp" id="mdp" />
 	</p>
 	</fieldset>
     <p><input type="submit" value="Connexion" /></p></form>
-	<a href="./register.php">Pas encore inscrit ?</a>
+	<a href="../register/register.php">Pas encore inscrit ?</a>
 	 
 	</div>
 	</body>

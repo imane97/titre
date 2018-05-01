@@ -27,7 +27,7 @@ figure {
 }
 
 /* Classe que l'on utilise pour cacher les cartes */
-.invisible {
+.invisible, .invisibleForm{
   visibility: hidden;
 }
 
@@ -37,4 +37,13 @@ text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 250%;
   color: darkorange;
+}
+
+/* Formulaire */
+.visibleForm{
+  visibility: visible;
+}
+form{
+position: fixed top;
+z-index: 2;
 }

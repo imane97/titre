@@ -11,6 +11,41 @@
 <body>
 	<div id="cards" class="cards-container"></div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 	<script src="memory.js"></script>
+	<div id="container">
+
+
+
+
+		<form id="form" class="invisibleForm" autocomplete="off" enctype="multipart/form-data" method="post"  name="form">
+
+			<div class="info">
+				<span class="error" style="display:none"><h2>DONN&Eacute;ES INVALIDE</h2></span>
+				<span  class="success" style="display:none"><h2>ENREGISTREMENT FAIT</h2></span>
+			</div>
+
+			<div class="formLayout">
+			<table cellpadding="2" cellspacing="2" border="0">
+			<!-- INPUTS -->
+			<tr>
+				<td valign="top"><label>Nom</label></td>
+				<td valign="top"><input id="idUser" name="idUser" type="text" maxlength="255" tabindex="1" size="60"/></td>
+			</tr>
+	
+			<!-- BTN -->
+			<tr>
+				<td>&nbsp;</td>
+				<td valign="top">
+			<input  type="submit" value="ENVOYER" class="submit"/>
+				</td>
+			</tr>
+			</table>
+			</div>
+
+		</form>
+
+
+			</div><!--container-->
 </body>
 </html>

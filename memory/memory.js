@@ -21,12 +21,62 @@ afficheScore= '';
 gagne = 0;
 message = 'Super tu as retourné toutes tes cartes avec un score de : ';
 
+
+$(function() {
+$(".submit").click(function() {
+
+  /* VALUES */
+    var nom = $("#nom").val();
+
+  /* DATASTRING */
+    var dataString = 'nom=';
+
+
+
+  if(nom=='') {
+  $('.success').fadeOut(200).hide();
+    $('.error').fadeOut(200).show();
+  /* UNCOMMNENT TO SEND TO CONSOLE */
+  console.log ("SOMETHING HAPPENS"); 
+  } else {
+  $.ajax({
+  type: "POST",
+    url: "join.php",
+    data: dataString,
+      success: function(){
+      $('.success').fadeIn(200).show();
+        $('.error').fadeOut(200).hide();
+      /* UNCOMMNENT TO SEND TO CONSOLE */
+    
+      console.log (dataString);	
+      console.log ("AJAX DONE");
+      
+       }
+  });
+    }//EOC
+   return false;
+  }); //EOF
+
+
+
+});
+//  END
+
+
+
+// Envoyer score à bdd
+function sendScore(){
+  $('#form').removeClass('invisibleForm').addClass('visibleForm'); 
+  
+}
 // Gagner
 function Gagner(){
   var invisible = $(".invisible"); 
-  if(tableau.length == invisible.length )
+  if(tableau.length == invisible.length ){
+    $('header').append(message)
+    sendScore();
+  }
   //  $('.invisible')
-$('header').append(message);
 }
 
 // Gérer le score 
