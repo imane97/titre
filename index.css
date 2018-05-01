@@ -1,267 +1,68 @@
 * {
     box-sizing: border-box;
 }
-
-/* MORPION  ET CASSE BRIQUES */
-
-/*  ROTATION DU CUBE */
-
-.wrapper {
-    perspective: 800px;
-    perspective-origin: 50% 50%;
+/* FONT  */
+h1{
+    font-family:'Titan One', cursive;
+    text-align: center; 
+    font-size: 10vh;
+}
+a{
+    font-family:'Amatic SC', cursive;
+    font-size: 5vh;
+    color: white;
+    text-decoration: none; 
+ text-align: center;
 }
 
-.cube {
-    position: relative;
-    width: 200px;
-    transform-style: preserve-3d;
+/* IMAGE DE FOND */
+body{
+    background-image: url(images/fond.jpg);
 }
 
-.cube div {
-    position: absolute;
-    width: 200px;
-    height: 200px;
+/* NAV  */
+.nav{
+    display: flex;
+   justify-content: space-around;
 }
 
-.back {
-    transform: translateZ(-100px) rotateY(180deg);
+/* CARRÉ DE NAV  */
+ .back{
+	width:100px;
+	height:100px;
+    background:darkgrey;
+    backface-visibility: hidden;
 }
-
-.right {
-    transform: rotateY(-270deg) translateX(100px);
-    transform-origin: top right;
-}
-
-.left {
-    transform: rotateY(270deg) translateX(-100px);
-    transform-origin: center left;
-}
-
-.top {
-    transform: rotateX(-90deg) translateY(-100px);
-    transform-origin: top center;
-}
-
-.bottom {
-    transform: rotateX(90deg) translateY(100px);
-    transform-origin: bottom center;
-}
-
-.front {
-    transform: translateZ(100px);
-}
-
-.face {
-    width: 200px;
-    height: 200px;
-    display: block;
-    background: rgba(128, 128, 128, O.5);
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-    text-align: center;
-    line-height: 200px;
-    color: rgba(0, 0, 0, 0.5);
-    transition: all 1s linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotateY(10);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-.cube {
-    animation: spin 5s infinite linear;
-    margin-left: 35%;
-    margin-top: 10%;
-}
-/* COULEURS PREMIER CUBE */
-.cube:hover .left {
-    background-color:grey;
-    -webkit-margin-before: 5em;
-    transform: translateX( 1000px);
-}
-
-.cube:hover .right {
-    background-color: grey;
-    transform: translateX( -1000px);
-}
-
-.cube:hover .front {
-    background-color: white;
-    -webkit-margin-before: -10em;
-    transform: rotateY( 180deg) translateZ(1000px);
-}
-
-.cube:hover .back {
-    background-color: white;
-    -webkit-margin-before: 10em;
-    transform: rotateX( 180deg) translateZ(-1000px);
-}
-
-.cube:hover .bottom {
-    background-color: grey;
-    -webkit-margin-before: 15em;
-    transform: rotateY(180deg) rotateX(90deg);
-}
-
-.cube:hover .top {
-    background-color: grey;
-    -webkit-margin-before: -10em;
-    transform: rotateY(180deg) rotateX(90deg);
-}
-
-/* DEUXIÈME CUBE */
-/* 
-.cube:hover .left {
-    background-color: red;
-    -webkit-margin-before: 5em;
-    transform: translateX( 1000px);
-}
-
-.cube:hover .right {
-    background-color: green;
-    transform: translateX( -1000px);
-}
-
-.cube:hover .front {
-    background-color: blue;
-    -webkit-margin-before: -10em;
-    transform: rotateY( 180deg) translateZ(1000px);
-}
-
-.cube:hover .back {
-    background-color: pink;
-    -webkit-margin-before: 10em;
-    transform: rotateX( 180deg) translateZ(-1000px);
-}
-
-.cube:hover .bottom {
-    background-color: black;
-    -webkit-margin-before: 15em;
-    transform: rotateY(180deg) rotateX(90deg);
-}
-
-.cube:hover .top {
-    background-color: yellow;
-    -webkit-margin-before: -10em;
-    transform: rotateY(180deg) rotateX(90deg);
-}
-
-.surprise {
+ .back:hover{
     visibility: hidden;
 }
-
-.cube:hover .surprise {
-    visibility: visible;
-} */
-
-/* MEMORY GAME  */
-
+/*  ROTATION SUR Y */
 #container {
-    position: relative;
-    margin: 50px auto;
-    width: 450px;
-    height: 281px;
-    z-index: 1;
-    margin-left: 800px;
+  position: relative;
+  margin: 50px auto;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+/* margin-left: 800px; */
 }
-
 #container {
-    perspective: 1000;
+  perspective: 1000;
 }
-
 #carte {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1.0s linear;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.2s linear;
 }
-
 #container:hover #carte {
-    transform: rotateY(180deg);
-    box-shadow: -5px 5px 5px #aaa;
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
 }
-
 .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+  position: absolute;
+  backface-visibility: hidden;
 }
-
 .face.verso {
-    display: block;
-    transform: rotateY(180deg);
-    box-sizing: border-box;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    background-color: #aaa;
+  transform: rotateY(180deg);
 }
 
-/*  CARTE 2 ROTATION SUR X */
-
-#container2 {
-    position: relative;
-    margin: 50px auto;
-    width: 450px;
-    height: 280px;
-    z-index: 1;
-    margin-left: 800px;
-}
-
-#container2 {
-    perspective: 1000;
-}
-
-#carte2 {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1.0s linear;
-}
-
-#container2:hover #carte2 {
-    transform: rotatex(180deg);
-    /*box-shadow: -5px 5px 5px #aaa;*/
-}
-
-.face2 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.face2.verso2 {
-    display: block;
-    transform: rotateY(180deg);
-    box-sizing: border-box;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    background-color: #aaa;
-}
-
-/*   CARET 3 ROTATION SUR Z*/
-
-#container3 {
-    perspective: 1000;
-    margin-left: 800px;
-    z-index: -1;
-}
-
-#carte3 {
-    width: 75%;
-    height: 75%;
-    transform-style: preserve-3d;
-    transition: all 1.0s linear;
-}
-
-#container3:hover #carte3 {
-    transform: rotatez(360deg);
-}
