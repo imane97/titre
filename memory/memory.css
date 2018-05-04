@@ -2,12 +2,15 @@
 .cards-container {
   display: flex;
   flex-flow: wrap;
+  max-width: 150vh;
+  max-height: 250vh;
+  margin-left: 35vh;
 }
 
 /* Donner une taille aux images pour l'instant cachées  */
 img {
-  width: 20vw;
-  height: 40vh;
+  width: 20vh;
+  height: 20vh;
   max-width: 100%;
   height: auto;
   display: none;
@@ -16,8 +19,8 @@ img {
 /* Donner une taille aux versos des cartes */
 figure {
   margin: 12px;
-  width: 200px;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   background: tomato;
 }
 
@@ -34,9 +37,9 @@ figure {
 /* Apparence affichage du score  */
 .score{
 text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 250%;
-  color: darkorange;
+  font-family:'Amatic SC', cursive;
+  font-size: 5vh;
+  color: black;
 }
 
 /* Formulaire */
@@ -46,4 +49,16 @@ text-align: center;
 form{
 position: fixed top;
 z-index: 2;
+font-family:'Amatic SC', cursive;
+}
+
+.nav a{
+  font-family:'Amatic SC', cursive;
+  font-size: 8vh;
+  color: black;
+  text-decoration: none; 
+margin-left: 97vh;
+}
+body{
+  background-image: url(../images/fond.jpg);
 }

@@ -3,8 +3,10 @@
   }
   body{
     text-align:center;
-  
+    background-image: url(../images/fond.jpg) ;
+    background-attachment: repeat;
   }
+
   td.bord{
     border-top:2px solid black; border-bottom:2px solid black;
   }
@@ -18,11 +20,30 @@
     border-bottom:2px solid black;
   }
   table{
-  margin-left:15%;
+  margin-left:60vh;
   border: 0;
   }
   img{
     max-width: 200px;
     height: auto;
   }
-  
+.nav a{
+    font-family:'Amatic SC', cursive;
+    font-size: 5vh;
+    color: black;
+    text-decoration: none; 
+ text-align: center;
+  }
+/* Fomrulaire */
+/* Formulaire */
+.visibleForm{
+  visibility: visible;
+}
+form{
+position: fixed top;
+z-index: 2;
+font-family:'Amatic SC', cursive;
+}
+.invisibleForm{
+  visibility: hidden;
+}

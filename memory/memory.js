@@ -1,3 +1,4 @@
+$(document).ready(function(){ //Le script est lancé que lorsque la page est totalement chargée
 var grid="";
 var tableau=[];
 var arrayOfImages = [
@@ -19,56 +20,30 @@ var img= $('img');
 score = 0; 
 afficheScore= '';
 gagne = 0;
-message = 'Super tu as retourné toutes tes cartes avec un score de : ';
+message = 'Bien joué!  ';
+nomJeu = "Memory Game";
 
-
-$(function() {
-$(".submit").click(function() {
-
-  /* VALUES */
-    var nom = $("#nom").val();
-
-  /* DATASTRING */
-    var dataString = 'nom=';
-
-
-
-  if(nom=='') {
-  $('.success').fadeOut(200).hide();
-    $('.error').fadeOut(200).show();
-  /* UNCOMMNENT TO SEND TO CONSOLE */
-  console.log ("SOMETHING HAPPENS"); 
-  } else {
+// Envoyer à la bdd
+$(".submit").click(function(e) {
+    var nom = $("#nom").val(); //nom = valeur de l'input texte
+    console.log(nom);
+  if(nom!=null) {  //Sil il y a bien un nom d'entré 
   $.ajax({
-  type: "POST",
-    url: "join.php",
-    data: dataString,
-      success: function(){
-      $('.success').fadeIn(200).show();
-        $('.error').fadeOut(200).hide();
-      /* UNCOMMNENT TO SEND TO CONSOLE */
-    
-      console.log (dataString);	
-      console.log ("AJAX DONE");
-      
-       }
+    url: 'memory.php?nom='+nom+'&score='+score+'&nomJeu='+nomJeu, //Envoyer dans l'url le nom score et nom du jeu
+    datatype: "php",
+    success :function(){   // À la fin de cette fonction on affiche ce message en console 
+    console.log("ajax fait");
+    }
   });
-    }//EOC
-   return false;
-  }); //EOF
+  }
+  });
 
 
-
-});
-//  END
-
-
-
-// Envoyer score à bdd
-function sendScore(){
+  // Faire apparaître le  formulaire
+  function sendScore(){
   $('#form').removeClass('invisibleForm').addClass('visibleForm'); 
-  
 }
+
 // Gagner
 function Gagner(){
   var invisible = $(".invisible"); 
@@ -76,17 +51,16 @@ function Gagner(){
     $('header').append(message)
     sendScore();
   }
-  //  $('.invisible')
 }
 
 // Gérer le score 
 function Score(){
   afficheScore= '<h2 class="score"> Score : '+score+'</h2>'; 
-$('header').html(afficheScore); //J'utilise html et pas 
+$('h2').html(afficheScore); //J'utilise html et pas 
 Gagner();
 }
 
-for (var i =0; i<arrayOfImages.length/6; i++){
+for (var i =0; i<arrayOfImages.length/12; i++){
   tableau.push(arrayOfImages[i]);
   tableau.push(arrayOfImages[i]); 
 };                              // On push deux fois les images dans le tableau 
@@ -156,5 +130,5 @@ $("figure").click(function() {
   }
 });
 
-
+});
 

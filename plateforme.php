@@ -12,15 +12,18 @@ catch (Exception $e)
 
 // Récupérerce qu'il y a dans la bdd et l'afficher 
 $req = $bdd->prepare('SELECT * FROM UserPartie');
-$req->execute(array($_GET['idUser'], $_GET['idJeux'], $_GET['score']  ) );
+$req->execute(array($_GET['nom'], $_GET['nomjeu'], $_GET['score']  ) );
 
-echo '<ul>';
+echo ' <link rel="stylesheet" href="index.css">' ;
+echo  '<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">' ;
+echo '<div class="nav"> <a href="index.html"> Home </a> </div>' ;
+echo '<ol>';
 
 while ($donnees = $req->fetch())
 {
-	echo '<li>' . $donnees['idUser']  . $donnees['idJeux'] . $donnees['score']. '</li>';
+	echo '<li> Pseudo: ' . $donnees['nom'] .'</li>'.'<li> Jeux :' . $donnees['nomJeu'] .'</li>'.'<li> Score : '. $donnees['score']. '</li>';
 }
-echo '</ul>';
+echo '</ol>';
 
 $req->closeCursor();
 

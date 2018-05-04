@@ -1,6 +1,3 @@
-
-
-
 var canvas = document.getElementById("myCanvas");
 
 // Variable pour stocker le contenu du rendu 2d 
@@ -94,12 +91,12 @@ function collisionDetection() {
 // AFFICHER SCORE ET VIES
 function drawScore() {
     ctx.font = "26px Alegreya Sans SC";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#F63D15";
     ctx.fillText("Score: " + score, 8, 20);
 }
 function drawLives() {
     ctx.font = "26px Alegreya Sans SC";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#F63D15";
     ctx.fillText("Lives: " + lives, canvas.width - 95, 20);
 }
 
@@ -107,7 +104,7 @@ function drawLives() {
 function drawBall() {
     ctx.beginPath(); // Imprimer (un cercle)
     ctx.arc(x, y, ballRadius, 0, Math.PI * 2); // Contours : x et y, rayon, angle de fin
-    ctx.fillStyle = "#0095DD"; //Remplissage 
+    ctx.fillStyle = "#F63D15"; //Remplissage 
     ctx.fill();
     ctx.closePath();
 }
@@ -116,7 +113,7 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#F63D15";
     ctx.fill();
     ctx.closePath();
 }
@@ -134,7 +131,8 @@ function drawBricks() {
                 bricks[c][r].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = '#' + (Math.random() * 0xFFFFFF << 0).toString(16)
+                ctx.fillStyle = '#F63D15';  
+                // (Math.random() * 0xFFFFFF << 0).toString(16)
                 // ctx.fillStyle = "#0095DD";
                 ctx.fill();
                 ctx.closePath();

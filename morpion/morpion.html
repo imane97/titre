@@ -1,45 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html  lang="fr">
 <head>
 <meta "charset=utf-8">
 <title>Morpion</title>
-<link rel="stylesheet" href="css/morpion.css">
+<link rel="stylesheet" href="morpion.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
 </head>
 <body>
+	
+		<div class="nav"> 
+			<a href="../index.html"> Home</a> 
+		</div>
 <h2>Morpion</h2>
+
+<!-- FORMULAIRE EN FIN DE JEU -->
+<form id="form" class="invisibleForm" autocomplete="off" enctype="multipart/form-data" method="post"  name="form">
+
+
+	<div class="formLayout">
+	<table cellpadding="2" cellspacing="2" border="0">
+	<!-- INPUTS -->
+	<tr>
+		<td valign="top"><label>Nom</label></td>
+		<td valign="top"><input id="nom" name="idUser" type="text" maxlength="255" tabindex="1" size="60"/></td>
+	</tr>
+
+	<!-- BTN -->
+	<tr>
+		<td>&nbsp;</td>
+		<td valign="top">
+	<input  type="submit" value="ENVOYER" class="submit" id="submit" onClick="envoyer(e)" />
+		</td>
+	</tr>
+	</table>
+	</div>
+
+</form>
+
+<!-- TERRAIN DE JEU  -->
 <div id="player">Joueur Actuel :</div>
 <table >
 	<tr>
 		 <td href="#" onClick="return joue(0)" >  <!--On donne à la focntion joue l'emplacement de la case à remplacer -->
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td class="bord2" href="#" onClick="return joue(1)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td href="#" onClick="return joue(2)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 	</tr>
 	<tr>
 		<td class="bord" href="#" onClick="return joue(3)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td class="bord3" href="#" onClick="return joue(4)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td class="bord" href="#" onClick="return joue(5)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 	</tr>
 	<tr>
 		<td href="#" onClick="return joue(6)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td class="bord2" href="#" onClick="return joue(7)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 		<td href="#" onClick="return joue(8)">
-			<img src="vide.png">
+			<img src="vide.jpg">
 		</td>
 	</tr>
 </table>

@@ -10,10 +10,11 @@ h1{
 a{
     font-family:'Amatic SC', cursive;
     font-size: 5vh;
-    color: white;
+    color: black;
     text-decoration: none; 
  text-align: center;
 }
+
 
 /* IMAGE DE FOND */
 body{
@@ -31,38 +32,41 @@ body{
 	width:100px;
 	height:100px;
     background:darkgrey;
-    backface-visibility: hidden;
 }
- .back:hover{
-    visibility: hidden;
-}
-/*  ROTATION SUR Y */
+
 #container {
-  position: relative;
   margin: 50px auto;
   width: 100px;
   height: 100px;
-  z-index: 1;
-/* margin-left: 800px; */
 }
-#container {
-  perspective: 1000;
-}
+
 #carte {
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
   transition: all 0.2s linear;
 }
 #container:hover #carte {
-  transform: rotateY(180deg);
   box-shadow: -5px 5px 5px #aaa;
 }
-.face {
-  position: absolute;
-  backface-visibility: hidden;
-}
-.face.verso {
-  transform: rotateY(180deg);
-}
 
+
+/* SCORES */
+ol{
+    background: rgba(255, 255, 255, 0.5); 
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+    margin-top: 20vh;
+font-family:'Amatic SC', cursive;
+font-size: 4vh;
+
+}
+li{
+    margin-top: 2vh; 
+    margin-bottom: 2vh;
+}
+li:nth-child(3n){
+    border-bottom: 2px solid black; 
+    width: 25vh;
+    margin-left: 92vh;
+}
