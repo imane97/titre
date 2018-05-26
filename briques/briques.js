@@ -3,11 +3,12 @@ var canvas = document.getElementById("myCanvas");
 // Variable pour stocker le contenu du rendu 2d 
 var ctx = canvas.getContext("2d");
 
+var nomJeu= 'Casse briques';
 //  BALLE 
 var x = canvas.width / 2;
 var y = canvas.height - 30; //=> Point de départ
-var dx = 2;
-var dy = -2; // => Échelle de déplacement : 2px
+var dx = 5;
+var dy = -5; // => Échelle de déplacement : 2px
 var ballRadius = 10; //Rayon
 
 // PALETTE
@@ -22,11 +23,11 @@ document.addEventListener("mousemove", mouseMoveHandler, false); // => Ecouter s
 
 
 // BRIQUES 
-var brickRowCount = 10;
-var brickColumnCount = 9;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding = 10;
+var brickRowCount = 10; //Nombre de ligne
+var brickColumnCount = 10; // Nombre de colonne
+var brickWidth = 75; //Largeur 
+var brickHeight = 20; //Hauteur 
+var brickPadding = 1;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var bricks = [];
@@ -39,7 +40,7 @@ for (c = 0; c < brickColumnCount; c++) {
 
 // SCORE ET VIES
 var score = 0;
-var lives = 10;
+var lives = 100;
 
 // CONTROLER LA  BALLE
 //=> Avec les flèches
@@ -80,7 +81,7 @@ function collisionDetection() {
                     score++; // => ... et ajouter un point
                     if (score == brickRowCount * brickColumnCount) {
                         alert("YOU WIN, CONGRATULATIONS!");
-                        document.location.reload();
+                        sendScore();
                     }  // => Si le jeu est finis afficher Alert et reload la partie
                 }
             }
@@ -141,6 +142,32 @@ function drawBricks() {
     }
 }
 
+// Faire apparaître le  formulaire
+function sendScore() {
+    var form = document.getElementById('form');
+	console.log(score + "score");
+    form.classList.remove('invisibleForm');
+    dx = 0; 
+    dy = 0;
+	// sendbdd();
+}
+
+// Envoyer à la bdd
+$(".submit").click(function(e) {
+    var nom = $("#nom").val(); //nom = valeur de l'input texte
+    console.log(nom);
+  if(nom!=null) {  //Sil il y a bien un nom d'entré 
+  $.ajax({
+    url: 'briques.php?nom='+nom+'&score='+score+'&nomJeu='+nomJeu, //Envoyer dans l'url le nom score et nom du jeu
+    datatype: "php",
+    success :function(){   // À la fin de cette fonction on affiche ce message en console 
+    console.log("ajax fait");
+    document.location.reload();
+    }
+  });
+  }
+  });
+
 // BOUGER BALLE 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); //Effacer la balle faite précédement dans le rectangle de jeu
@@ -172,8 +199,8 @@ function draw() {
             else {
                 x = canvas.width / 2;
                 y = canvas.height - 30;
-                dx = 2;
-                dy = -2;
+                dx = 5;
+                dy = -5;
                 paddleX = (canvas.width - paddleWidth) / 2;
             }
         } //Si la balle  touche le sol le jeu est over
@@ -191,4 +218,11 @@ function draw() {
     y += dy; // => Bouger la  position de la balle 
     requestAnimationFrame(draw);//=> La fonction se rappelle à chaque nouvelle forme
 }
-draw();
+
+$(".go").click(function(e) {
+    console.log(this);
+    $(this).addClass("invisibleForm");
+ draw();
+  });
+
+

@@ -17,9 +17,38 @@
         <div class="nav"> 
                 <a href="../index.html"> Home</a> 
             </div>
+<input type="submit" class="go" id="go" value="GO PLAY!">
+
+<!-- <button class="go" id="go" disabled="disabled"> GO</button> -->
+            <!-- FORMULAIRE EN FIN DE JEU -->
+<form id="form" class="invisibleForm" autocomplete="off" enctype="multipart/form-data" method="post"  name="form">
+
+
+	<div class="formLayout">
+	<table cellpadding="2" cellspacing="2" border="0">
+        
+	<!-- INPUTS -->
+	<tr>
+		<td valign="top"><label>Nom</label></td>
+		<td valign="top"><input id="nom" name="idUser" type="text" maxlength="255" tabindex="1" size="60"/></td>
+	</tr>
+
+	<!-- BTN -->
+	<tr>
+		<td>&nbsp;</td>
+		<td valign="top">
+	<input  type="submit" value="ENVOYER" class="submit" id="submit"  />
+		</td>
+	</tr>
+	</table>
+	</div>
+
+</form>
+
+
     <canvas id="myCanvas" width="800" height="620"></canvas>
     
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="briques.js"></script>
    
 </body>

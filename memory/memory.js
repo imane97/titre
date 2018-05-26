@@ -60,7 +60,7 @@ $('h2').html(afficheScore); //J'utilise html et pas
 Gagner();
 }
 
-for (var i =0; i<arrayOfImages.length/12; i++){
+for (var i =0; i<arrayOfImages.length; i++){
   tableau.push(arrayOfImages[i]);
   tableau.push(arrayOfImages[i]); 
 };                              // On push deux fois les images dans le tableau 
@@ -121,7 +121,7 @@ $("figure").click(function() {
       } else {
         setTimeout(function() {
           $(".show").removeClass("show");
-          score--;
+          score = score - 0.25;
           Score();
           console.log("Score = "+score);
         }, 1000);

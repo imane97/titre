@@ -2,7 +2,7 @@
 // Connexion àla bdd test 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+	$bdd = new PDO('mysql:host=db737527222.db.1and1.com;dbname=db737527222;charset=utf8', 'dbo737527222', 'Compte1and1!');
 }
 catch (Exception $e)
 {

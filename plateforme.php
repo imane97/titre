@@ -1,9 +1,9 @@
 <?php 
 // Connexion àla bdd test
-$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');  
+// $bdd = new PDO('mysql:host=db737527222.db.1and1.com;dbname=db737527222;charset=utf8', 'dbo737527222', 'Compte1and1!');  
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+	$bdd = new PDO('mysql:host=db737527222.db.1and1.com;dbname=db737527222;charset=utf8', 'dbo737527222', 'Compte1and1!');
 }
 catch (Exception $e)
 {
@@ -11,7 +11,8 @@ catch (Exception $e)
 }
 
 // Récupérerce qu'il y a dans la bdd et l'afficher 
-$req = $bdd->prepare('SELECT * FROM UserPartie');
+// $req = $bdd->prepare('SELECT * FROM UserPartie');
+$req = $bdd -> prepare('SELECT * FROM UserPartie ORDER BY score DESC LIMIT 0, 5 ');
 $req->execute(array($_GET['nom'], $_GET['nomjeu'], $_GET['score']  ) );
 
 echo ' <link rel="stylesheet" href="index.css">' ;

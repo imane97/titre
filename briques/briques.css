@@ -17,3 +17,30 @@ body{
     text-decoration: none; 
   margin-left: 97vh;
   }
+/* Formulaire */
+.visibleForm{
+    visibility: visible;
+  }
+form{
+  position: fixed top;
+  z-index: 2;
+  font-family:'Amatic SC', cursive;
+  margin-left: 50vh;
+  }
+.invisibleForm{
+    visibility: hidden;
+  }
+
+/* Bouton de lancement  */
+#go{
+    z-index: 1;
+    color:white;
+    background: #F63D15;
+    margin-left: 85vh;
+    margin-top: 25vh;
+    font-family: 'Almatic SC', cursive;
+    width: 25vh;
+    height: 10vh;
+    position: fixed;
+}
+  

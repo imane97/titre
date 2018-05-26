@@ -46,10 +46,13 @@ text-align: center;
 .visibleForm{
   visibility: visible;
 }
-form{
-position: fixed top;
-z-index: 2;
+#form{
 font-family:'Amatic SC', cursive;
+z-index: 2;
+/* margin-bottom: 50vh; */
+margin-left: 50vh;
+position: fixed top;
+margin-top: 5vh;
 }
 
 .nav a{
