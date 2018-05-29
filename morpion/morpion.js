@@ -9,7 +9,7 @@ var i = 0;
 var joueur1 = 'Premier Joueur';
 var joueur2 = 'Second Joueur';
 
-var nomJeu = 'Morpion';
+var nomJeu = '1';
 var score = 0;
 
 function initialisation() {

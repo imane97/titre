@@ -21,7 +21,7 @@ score = 0;
 afficheScore= '';
 gagne = 0;
 message = 'Bien joué!  ';
-nomJeu = "Memory Game";
+nomJeu = "3";
 
 // Envoyer à la bdd
 $(".submit").click(function(e) {

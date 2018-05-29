@@ -3,7 +3,7 @@ var canvas = document.getElementById("myCanvas");
 // Variable pour stocker le contenu du rendu 2d 
 var ctx = canvas.getContext("2d");
 
-var nomJeu= 'Casse briques';
+var nomJeu= '2';
 //  BALLE 
 var x = canvas.width / 2;
 var y = canvas.height - 30; //=> Point de départ
